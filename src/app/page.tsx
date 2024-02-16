@@ -1,8 +1,11 @@
-import portfolios from "@/data/portfolios.json";
-import blogs from "@/data/blogs.json";
 import { Card } from "@/components/cards/card";
+import { getBlogs } from "@/db/queries/blogs";
+import { getPortfolios } from "@/db/queries/portfolios";
 
-export default function Home() {
+export default async function Home() {
+  const blogs = await getBlogs();
+  const portfolios = await getPortfolios();
+
   return (
     <div>
       <Card title="Portfolios" items={portfolios} />
