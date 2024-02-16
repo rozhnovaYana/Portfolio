@@ -1,0 +1,29 @@
+.card {
+  &-items {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 40px;
+  }
+}
+.item {
+  max-width: 50%;
+  width: 200px;
+  padding: 5px;
+  border: 1px solid black;
+  &-image {
+    height: 100px;
+    position: relative;
+    margin-bottom: 2px;
+    img {
+      object-fit: cover;
+    }
+  }
+  &-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 3px;
+  }
+  &-description {
+    font-size: 10px;
+  }
+}
