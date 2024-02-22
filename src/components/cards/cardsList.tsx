@@ -1,5 +1,5 @@
 import Image from "next/image";
-import styles from "./card.module.scss";
+import styles from "./cardsList.module.scss";
 
 interface IItem {
   id: string;
@@ -9,15 +9,17 @@ interface IItem {
 }
 interface IItems {
   title: string;
-  items: IItem[];
+  fetchData: () => Promise<IItem[]>;
 }
 
-export function Card({ title, items }: IItems) {
+export async function CardsList({ title, fetchData }: IItems) {
+  const items = await fetchData();
+
   return (
     <div className={styles.card}>
       <h2 className={styles["card-title"]}>{title}</h2>
       <ul className={styles["card-items"]}>
-        {items.map((p) => (
+        {items?.map((p) => (
           <li key={p.id} className={styles.item}>
             <div className={styles["item-image"]}>
               <Image

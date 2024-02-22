@@ -1,16 +1,13 @@
-import { Card } from "@/components/cards/card";
+import { CardsList } from "@/components/cards/cardsList";
 import { getBlogs } from "@/db/queries/blogs";
 import { getPortfolios } from "@/db/queries/portfolios";
 
 export default async function Home() {
-  const blogs = await getBlogs();
-  const portfolios = await getPortfolios();
-
   return (
     <div>
-      <Card title="Portfolios" items={portfolios} />
+      <CardsList title="Portfolios" fetchData={getPortfolios} />
       <hr />
-      <Card title="Blogs" items={blogs} />
+      <CardsList title="Blogs" fetchData={getBlogs} />
     </div>
   );
 }
