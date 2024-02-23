@@ -12,7 +12,7 @@ export const request = async (
       data,
     });
 
-    return res.data;
+    return await res.data;
   } catch (err: unknown) {
     throw new Error("Something went wrong");
   }
