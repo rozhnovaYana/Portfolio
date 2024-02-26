@@ -1,4 +1,4 @@
-import portfolios from "@/data/portfolios.json";
+import { getContent } from "@/helpers/markdown-reader";
 export const getPortfolios = () => {
-  return portfolios;
+  return getContent("portfolios");
 };

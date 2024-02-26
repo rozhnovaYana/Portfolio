@@ -1,4 +1,5 @@
-import blogs from "@/data/blogs.json";
+import { getContent } from "@/helpers/markdown-reader";
+
 export const getBlogs = () => {
-  return blogs;
+  return getContent("blogs");
 };
